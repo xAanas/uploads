@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="{{ asset('bundles/jbfileuploader/lib/jquery-file-upload/css/jquery.fileupload.css') }}" type="text/css" rel="stylesheet" />
+            <link href="{{ asset('bundles/jbfileuploader/css/jbfileupload.css') }}" type="text/css" rel="stylesheet" />
+            <link href="{{ asset('bundles/jbfileuploader/lib/jcrop/css/jquery.Jcrop.min.css') }}" type="text/css" rel="stylesheet" />
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+    {% block body %}{% endblock %}
+    {% block javascripts %}
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="{{ asset('bundles/jbfileuploader/lib/jquery-file-upload/js/vendor/jquery.ui.widget.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/jbfileuploader/lib/jquery-file-upload/js/jquery.iframe-transport.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/jbfileuploader/lib/jquery-file-upload/js/jquery.fileupload.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/jbfileuploader/js/jbfileupload.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/jbfileuploader/lib/jcrop/js/jquery.Jcrop.js') }}"></script>
+        <script type="text/javascript">
+            $(document).ready(function ()
+            {
+                $('.jb_fileupload').jbFileUpload();
+            });
+        </script>
+    {% endblock %}
+</body>
+</html>
